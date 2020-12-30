@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>candidate summary</title>
+    <link rel="stylesheet" href="summary.css" />
+    <body>
+      <h1>Below Details are Required</h1>
+      <p>Please fill below details:</p>
+      <br />
+
+      <div class="all1">
+        <form action="javascript:summary()">
+          <label for="fname">Name:</label>
+          <input type="text" id="fname" name="fname" /><br /><br />
+          <label for="sname">Surname:</label>
+          <input type="text" id="sname" name="sname" /><br /><br />
+          <label for="gender">Gender:</label>
+          <input list="gender" name="gender" />
+          <datalist id="gender">
+            <option value="Male"></option>
+            <option value="Female"></option></datalist
+          ><br /><br />
+          <label for="exp">Experience</label>
+
+          <input type="radio" id="01" name="yr" value="01" />
+          <label for="01">01</label>
+          <input type="radio" id="02" name="yr" value="02" />
+          <label for="02">02</label>
+          <input type="radio" id="03" name="yr" value="03" />
+          <label for="03">03</label>
+          <input type="radio" id="g03" name="yr" value="g03" />
+          <label for="g03">>03</label>
+          <br /><br />
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country" /><br /><br />
+          <input type="submit" value="Submit" class="sub" />
+          <hr />
+        </form>
+      </div>
+
+      <lable class="text"><strong>Summary:</strong></lable>
+
+      <span id="display"></span>
+
+      <script type="text/javascript">
+        var k = " ";
+
+        function summary() {
+          k =
+            k +
+            "<br>" +
+            document.getElementById("fname").value +
+            " " +
+            document.getElementById("sname").value +
+            " " +
+            "has total" +
+            " " +
+            document.querySelector('input[name="yr"]:checked').value +
+            " " +
+            "years of experience in this domain from" +
+            " " +
+            document.getElementById("country").value +
+            ".";
+          document.getElementById("display").innerHTML = k;
+        }
+      </script>
+    </body>
+  </head>
+</html>
